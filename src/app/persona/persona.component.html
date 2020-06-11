@@ -1,0 +1,49 @@
+<h1>Prueba del módulo http</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <table class="table table-striped">
+                <thead>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Profesional</th>
+                    <th>*</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of personas">
+                        <td>{{ item._id }}</td>
+                        <td>{{ item.Nombre }}</td>
+                        <td>{{ item.Apellido }}</td>
+                        <td>{{ item.Edad }}</td>
+                        <td>{{ item.isProfesional }}</td>
+                        <td>
+                            <button (click)="eliminarPersona(item._id)" class="btn btn-primary">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <h3>Formulario</h3>
+            <div class="form-group">
+                <label for="controlPersona">Nombre</label>
+                <input Type="text" [(ngModel)]="agregarPersonaRegistro.Nombre" ngDefaultControl class="form-control"  placeholder="Nombre de la persona"> 
+            </div>
+            <div class="form-group">
+                <label for="controlPersona">Apellido</label>
+                <input Type="text" [(ngModel)]="agregarPersonaRegistro.Apellido" ngDefaultControl class="form-control"  placeholder="Apellido de la persona"> 
+            </div>
+            <div class="form-group">
+                <label for="controlPersona">Edad</label>
+                <input Type="text" [(ngModel)]="agregarPersonaRegistro.Edad" ngDefaultControl class="form-control"  placeholder="Edad de la persona"> 
+            </div>
+            <!-- div class="form-group">
+                <label for="controlPersona">Profesional</label>
+                <input Type="text" class="form-control"  placeholder="Es profesional"> 
+            </div /-->
+            <button (click)="agregarPersona()" class="btn btn-primary">Agregar</button>
+        </div>
+    </div>
+</div>
